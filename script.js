@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 document.addEventListener('DOMContentLoaded', function() {
     const translateBtn = document.getElementById('translateBtn');
     const inputText = document.getElementById('inputText');
@@ -8,11 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     translateBtn.addEventListener('click', function() {
         const textToTranslate = inputText.value;
         const apiKey = process.env.API_KEY;
-        
-        
+
         const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
 
-        
         fetch(apiUrl, {
             method: 'POST',
             headers: {
