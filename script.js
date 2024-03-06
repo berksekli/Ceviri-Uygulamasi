@@ -2,10 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const translateBtn = document.getElementById('translateBtn');
     const inputText = document.getElementById('inputText');
     const translationResult = document.getElementById('translationResult');
+    const sourceLanguageSelect = document.getElementById('sourceLanguage');
+    const targetLanguageSelect = document.getElementById('targetLanguage');
 
     translateBtn.addEventListener('click', function() {
         const textToTranslate = inputText.value;
-        const apiKey = process.env.API_KEY;
+        const apiKey = 'apikey';
+        const sourceLanguage = sourceLanguageSelect.value;
+        const targetLanguage = targetLanguageSelect.value;
 
         const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
 
@@ -16,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify({
                 q: textToTranslate,
-                source: 'en', 
-                target: 'tr'  
+                source: sourceLanguage, 
+                target: targetLanguage  
             })
         })
         .then(response => response.json())

@@ -6,15 +6,27 @@
     <title>TBS Translate</title>
     <link href="favicon.ico" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>TBS Translate</h1>
+        <p>Kaynak Dili Seçiniz</p>
+        <select id="sourceLanguage">
+            <option value="tr">Türkçe</option>
+            <option value="en">İngilizce</option>
+            <option value="es">İspanyolca</option>
+        </select>
         <textarea id="inputText" placeholder="En Doğru Çeviriye Ulaşmak İçin Buraya İngilizce Metninizi Yazın..."></textarea>
         <button id="translateBtn">Çevir Bakalım!</button>
+        <p>Çevirmek İstediğiniz Dili Seçiniz</p>
+        <select id="targetLanguage">
+            <option value="tr">Türkçe</option>
+            <option value="en">İngilizce</option>
+            <option value="es">İspanyolca</option>
+        </select>
         <div id="translationResult" class="result"></div>
     </div>
-
-    <script src="script.js"></script>
+   
 </body>
 </html>
